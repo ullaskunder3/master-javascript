@@ -6,72 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS PROJECTS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- component -->
-    <div class="bg-gray-200 flex flex-col gap-4 h-screen items-center justify-center">
+<body class="h-screen bg-black">
+    <div class="sm:h-full">
+        <div class="flex justify-center py-10">
+            <h1 class="text-cyan-100 text-5xl font-medium leading-tight text-primary">Js. Projects</h1>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-black p-10 pt-5">
 
-        <a class="rounded-sm w-3/4 grid grid-cols-12 bg-white shadow p-3 gap-2 items-center hover:shadow-lg transition delay-150 duration-300 ease-in-out hover:scale-105 transform"
-            href="https://ullaskunder3.github.io/master-javascript/Projects/DiceRoll/">
-            <div class="col-span-12 md:col-span-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="#2563eb">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                </svg>
-            </div>
-            <div class="col-span-11 xl:-ml-5">
-                <p class="text-blue-600 font-semibold"> Dice Roll project</p>
-            </div>
-            <div class="md:col-start-2 col-span-11 xl:-ml-5">
-                <p class="text-sm text-gray-800 font-light">
-                    Dice Roll Project: This JavaScript project allows users to simulate rolling dice. When the user
+            <a href="https://ullaskunder3.github.io/master-javascript/Projects/DiceRoll"
+                class="block rounded-xl border border-gray-800 p-4 hover:bg-slate-600/20">
+                <span class="inline-block rounded-lg p-3">
+                    <div class="inline-flex align-middle justify-center items-center select-none text-white">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+                            <path
+                                d="M7.55556 4.22222C7.55556 2.99492 8.55048 2 9.77778 2C11.0051 2 12 2.99492 12 4.22222V5.44444C12 5.99673 12.4477 6.44444 13 6.44444H16.5556C17.1078 6.44444 17.5556 6.89216 17.5556 7.44444V11C17.5556 11.5523 18.0033 12 18.5556 12H19.7778C21.0051 12 22 12.9949 22 14.2222C22 15.4496 21.0051 16.4444 19.7778 16.4444H18.5556C18.0033 16.4444 17.5556 16.8922 17.5556 17.4444V21C17.5556 21.5523 17.1078 22 16.5556 22H13C12.4477 22 12 21.5523 12 21V19.7778C12 18.5504 11.0051 17.5556 9.77778 17.5556C8.55048 17.5556 7.55556 18.5504 7.55556 19.7778V21C7.55556 21.5523 7.10784 22 6.55556 22H3C2.44772 22 2 21.5523 2 21V17.4444C2 16.8922 2.44772 16.4444 3 16.4444H4.22222C5.44952 16.4444 6.44444 15.4496 6.44444 14.2222C6.44444 12.9949 5.44952 12 4.22222 12H3C2.44772 12 2 11.5523 2 11V7.44444C2 6.89216 2.44772 6.44444 3 6.44444H6.55556C7.10784 6.44444 7.55556 5.99673 7.55556 5.44444V4.22222Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+                        </svg>
+                    </div>
+                </span>
+
+                <h2 class="mt-2 font-semibold text-base sm:text-lg text-white">
+                    Dice Roll project
+                </h2>
+                <p class="sm:mt-1 block text-sm sm:text-base text-gray-300"> JavaScript project allows users to simulate
+                    rolling dice. When the user
                     clicks a button, a random number between 1 and 6 is generated, representing the face of a dice. The
-                    corresponding dice image is displayed, providing a fun and interactive experience. It's a simple
-                    project that demonstrates the use of random number generation and DOM manipulation in JavaScript.
+                    corresponding dice image is displayed
                 </p>
-            </div>
+            </a>
 
-        </a>
-        <a class="rounded-sm w-3/4 grid grid-cols-12 bg-white shadow p-3 gap-2 items-center hover:shadow-lg transition delay-150 duration-300 ease-in-out hover:scale-105 transform"
-            href="https://ullaskunder3.github.io/master-javascript/Projects/modal/">
-            <div class="col-span-12 md:col-span-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="#2563eb">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                </svg>
-            </div>
-            <div class="col-span-11 xl:-ml-5">
-                <p class="text-blue-600 font-semibold">Modal</p>
-            </div>
-            <div class="md:col-start-2 col-span-11 xl:-ml-5">
-                <p class="text-sm text-gray-800 font-light">
-                    A small and concise project that demonstrates the implementation of a modal component using pure, or vanilla, JavaScript. The project focuses on creating a modal window that can be used for displaying overlay content or capturing user input in a user-friendly manner.
+            <a href="https://ullaskunder3.github.io/master-javascript/Projects/modal"
+                class="block rounded-xl border border-gray-800 p-4 hover:bg-slate-600/20">
+                <span class="inline-block rounded-lg p-3">
+                    <div class="inline-flex align-middle justify-center items-center select-none text-white">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+                            <path
+                                d="M7.55556 4.22222C7.55556 2.99492 8.55048 2 9.77778 2C11.0051 2 12 2.99492 12 4.22222V5.44444C12 5.99673 12.4477 6.44444 13 6.44444H16.5556C17.1078 6.44444 17.5556 6.89216 17.5556 7.44444V11C17.5556 11.5523 18.0033 12 18.5556 12H19.7778C21.0051 12 22 12.9949 22 14.2222C22 15.4496 21.0051 16.4444 19.7778 16.4444H18.5556C18.0033 16.4444 17.5556 16.8922 17.5556 17.4444V21C17.5556 21.5523 17.1078 22 16.5556 22H13C12.4477 22 12 21.5523 12 21V19.7778C12 18.5504 11.0051 17.5556 9.77778 17.5556C8.55048 17.5556 7.55556 18.5504 7.55556 19.7778V21C7.55556 21.5523 7.10784 22 6.55556 22H3C2.44772 22 2 21.5523 2 21V17.4444C2 16.8922 2.44772 16.4444 3 16.4444H4.22222C5.44952 16.4444 6.44444 15.4496 6.44444 14.2222C6.44444 12.9949 5.44952 12 4.22222 12H3C2.44772 12 2 11.5523 2 11V7.44444C2 6.89216 2.44772 6.44444 3 6.44444H6.55556C7.10784 6.44444 7.55556 5.99673 7.55556 5.44444V4.22222Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+                        </svg>
+                    </div>
+                </span>
+                <h2 class="mt-2 font-semibold text-base sm:text-lg text-white">
+                    Modal
+                </h2>
+                <p class="sm:mt-1 block text-sm sm:text-base text-gray-300"> Deliver
+                    A small and concise project that demonstrates the implementation of a modal component using pure, or
+                    vanilla, JavaScript. The project focuses on creating a modal window that can be used for displaying
+                    overlay content </p>
+            </a>
+
+            <a href="https://ullaskunder3.github.io/master-javascript/Projects/pagination"
+                class="block rounded-xl border border-gray-800 p-4 hover:bg-slate-600/20">
+                <span class="inline-block rounded-lg p-3">
+                    <div class="inline-flex align-middle justify-center items-center select-none text-white">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="32" width="32">
+                            <path
+                                d="M7.55556 4.22222C7.55556 2.99492 8.55048 2 9.77778 2C11.0051 2 12 2.99492 12 4.22222V5.44444C12 5.99673 12.4477 6.44444 13 6.44444H16.5556C17.1078 6.44444 17.5556 6.89216 17.5556 7.44444V11C17.5556 11.5523 18.0033 12 18.5556 12H19.7778C21.0051 12 22 12.9949 22 14.2222C22 15.4496 21.0051 16.4444 19.7778 16.4444H18.5556C18.0033 16.4444 17.5556 16.8922 17.5556 17.4444V21C17.5556 21.5523 17.1078 22 16.5556 22H13C12.4477 22 12 21.5523 12 21V19.7778C12 18.5504 11.0051 17.5556 9.77778 17.5556C8.55048 17.5556 7.55556 18.5504 7.55556 19.7778V21C7.55556 21.5523 7.10784 22 6.55556 22H3C2.44772 22 2 21.5523 2 21V17.4444C2 16.8922 2.44772 16.4444 3 16.4444H4.22222C5.44952 16.4444 6.44444 15.4496 6.44444 14.2222C6.44444 12.9949 5.44952 12 4.22222 12H3C2.44772 12 2 11.5523 2 11V7.44444C2 6.89216 2.44772 6.44444 3 6.44444H6.55556C7.10784 6.44444 7.55556 5.99673 7.55556 5.44444V4.22222Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="square"></path>
+                        </svg>
+                    </div>
+                </span>
+
+                <h2 class="mt-2 font-semibold text-base sm:text-lg text-white">
+                    pagination</h2>
+                <p class="sm:mt-1 block text-sm sm:text-base text-gray-300">
+                    This vanilla JavaScript project implements pagination functionality for a list of data. It provides
+                    a user interface with first, previous, next, and last buttons to navigate through the pages. Each
+                    page displays 10 data items, allowing users to easily navigate
                 </p>
-            </div>
-        </a>
-
-        <a class="rounded-sm w-3/4 grid grid-cols-12 bg-white shadow p-3 gap-2 items-center hover:shadow-lg transition delay-150 duration-300 ease-in-out hover:scale-105 transform"
-            href="https://ullaskunder3.github.io/master-javascript/Projects/pagination/">
-            <div class="col-span-12 md:col-span-1">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="#2563eb">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                </svg>
-            </div>
-            <div class="col-span-11 xl:-ml-5">
-                <p class="text-blue-600 font-semibold">pagination</p>
-            </div>
-            <div class="md:col-start-2 col-span-11 xl:-ml-5">
-                <p class="text-sm text-gray-800 font-light">
-                    This vanilla JavaScript project implements pagination functionality for a list of data. It provides a user interface with first, previous, next, and last buttons to navigate through the pages. Each page displays 10 data items, allowing users to easily navigate and view the content in manageable chunks."                </p>
-            </div>
-        </a>
-
+            </a>
+        </div>
     </div>
+
+    <footer class="rounded-lg shadow py-5 text-center">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://ullaskunder.tech/"
+                class="hover:underline">ullaskunder™</a>. connect ullaskunder.tech.
+        </span>
+    </footer>
+
 </body>
 
 </html>
