@@ -1,3 +1,4 @@
+// check if the dom is loaded !important and good
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("myForm");
   const dataTable = document
