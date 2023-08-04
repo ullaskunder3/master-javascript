@@ -13,17 +13,15 @@ Thank you all for sharing your knowledge and helping me on my learning journey!
 
 ```js
 function outerFun() {
-    let counter = 0;
-    function increment() {
-        counter++;
-        console.log("counter:", counter);
-    }
-    increment();
+  let counter = 0;
+  function increment() {
+    counter++;
+    console.log("counter:", counter);
+  }
+  increment();
 }
-outerFun()
-
+outerFun();
 ```
-
 
 ```
 Global Execution Context:
@@ -63,24 +61,26 @@ In this representation:
 
 I hope this Markdown format helps you understand the execution contexts more clearly. Let me know if you have any further questions!
 
-
 ```js
 function outerFun() {
-    let counter = 0;
-    function increment() {
-        counter++;
-        console.log("counter:", counter);
-    }
-    increment();
+  let counter = 0;
+  function increment() {
+    counter++;
+    console.log("counter:", counter);
+  }
+  increment();
 }
-outerFun()
+outerFun();
 ```
+
 1. Global Execution Context:
+
    - Variables:
      - outerFunction: `<function reference>`
      - exFun: `undefined` (initially uninitialized)
 
 2. When `outerFunction()` is called:
+
    - A new execution context is created for `outerFunction`.
    - The `counter` variable is declared and initialized to 0 in the `outerFunction` execution context.
    - The `increment` function is defined inside the `outerFunction` function.
@@ -89,9 +89,11 @@ outerFun()
    - The execution context of `outerFunction` is deleted as it has completed execution.
 
 3. Call Stack:
+
    - **Initially:** `outerFunction()` is at the top of the call stack, and the global execution context is at the bottom.
 
 4. When `exFun()` is called the first time:
+
    - A new execution context is created for `exFun`.
    - Inside `exFun`, it tries to access and increment `counter`.
    - It first looks for `counter` within its own execution context but doesn't find it.
@@ -100,9 +102,11 @@ outerFun()
    - The execution context of `exFun` completes, and it is popped off the call stack.
 
 5. Call Stack:
+
    - After `exFun()` is called: `exFun()` is at the top of the call stack, and the global execution context is at the bottom.
 
 6. When `exFun()` is called the second time:
+
    - A new execution context is created for `exFun`.
    - Inside `exFun`, it again tries to access and increment `counter`.
    - As before, it looks for `counter` within its own execution context but doesn't find it.
@@ -128,7 +132,7 @@ const fetchData = () => {
       if (data) {
         resolve(data);
       } else {
-        reject('Error occurred');
+        reject("Error occurred");
       }
     }, 2000);
   });
@@ -137,7 +141,6 @@ const fetchData = () => {
 fetchData()
   .then((data) => console.log(data))
   .catch((error) => console.error(error));
-
 ```
 
 - Async/Await: Introduced in ES2017, async/await simplifies asynchronous code even further by allowing you to write asynchronous code that looks like synchronous code
@@ -146,11 +149,11 @@ fetchData()
 const fetchData = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const data = 'Some fetched data';
+      const data = "Some fetched data";
       if (data) {
         resolve(data);
       } else {
-        reject('Error occurred');
+        reject("Error occurred");
       }
     }, 2000);
   });
@@ -166,7 +169,6 @@ const fetchDataAsync = async () => {
 };
 
 fetchDataAsync();
-
 ```
 
 ## Closures
@@ -184,7 +186,6 @@ const outerFunction = (outerParam) => {
 
 const closure = outerFunction(10);
 closure(5); // Output: 15
-
 ```
 
 ## Object Oriented Programming OOP ✨
@@ -203,8 +204,8 @@ The `prototype` is a special hidden property object that is associated with ever
 Objects in JavaScript are linked to a certain prototype, by means object can access that prototype method => `Prototypal inheritance`
 
 ```js
-let myArray = [11,22,33]
-console.log( myArray.at(0) )
+let myArray = [11, 22, 33];
+console.log(myArray.at(0));
 //output: 11
 
 /** Array.prototype is the prototype of all array objects
@@ -222,13 +223,12 @@ Objects - store functions with their associated data!
 
 ```javascript
 const user1 = {
-    name: 'ullas',
-    score: 2,
+  name: "ullas",
+  score: 2,
 
-    increment: function(){
-        user1.score++;
-    }
-
+  increment: function () {
+    user1.score++;
+  },
 };
 
 user1.increment();
@@ -270,13 +270,13 @@ user3.increment = function(){
 
 ```
 
-! *our code is getting repetitive, we are breaking our DRY principle*
+! _our code is getting repetitive, we are breaking our DRY principle_
 
 ? **What if we have milion of user....?**
 
 ## Champ => Functions 😁
 
- They are helpfull in this case so we don't have to repeat the code. They are wrapping up the instructions... write once call as many time you want
+They are helpfull in this case so we don't have to repeat the code. They are wrapping up the instructions... write once call as many time you want
 
 ## Solution 1. Generate Object using a function
 
@@ -291,7 +291,7 @@ function userCreator(name, score){
     newuser.increment = function(){
         newuser.score++;
     };
-    
+
     return newUser;
 };
 
@@ -308,17 +308,17 @@ user2.increment()
 Reason:
 
 - In global memory
-  
+
   **Initially:**
 
   ```js
-    global memory > 
+    global memory >
     - userCreator: -[f]-
 
     - User1 ...undefined
   ```
 
-user1  = `userCreator('ullas' 10)`
+user1 = `userCreator('ullas' 10)`
 
 which create a new execuation context
 
@@ -337,13 +337,13 @@ which create a new execuation context
   ```
 
   returning => `newUser` object
-  
+
   - return out to **Gloabl Memory**
 
 - In global memory
 
   ```js
-    global memory > 
+    global memory >
     - [function userCreator()]
 
     - User1 : {
@@ -353,12 +353,12 @@ which create a new execuation context
     }
   ```
 
-Same with =>  **user2**, declaring user2
+Same with => **user2**, declaring user2
 
 - In global memory
 
   ```js
-    global memory with > 
+    global memory with >
     - [function userCreator()]
 
     - user1 : {
@@ -369,7 +369,7 @@ Same with =>  **user2**, declaring user2
     - user2: ...undefined
   ```
 
-user2  = `userCreator('kingsman' 10)`
+user2 = `userCreator('kingsman' 10)`
 
 which create a new execuation context
 
@@ -387,14 +387,14 @@ which create a new execuation context
     }
   ```
 
-    returning => `newUser` object
-  
+  returning => `newUser` object
+
   - return out to **Gloabl Memory**
 
 - In global memory
 
   ```js
-    global memory with > 
+    global memory with >
     - [function userCreator()]
 
     - user1 : {
@@ -413,19 +413,19 @@ which create a new execuation context
 next step was => **to increment**
 
 ```js
-User1.increment()
-User2.increment()
+User1.increment();
+User2.increment();
 ```
 
 ## Problem
 
 > Each time we create a new user we make space in our computer's memory for our data functions.
-But our functions are just copies
+> But our functions are just copies
 
 In Global memory:
 
 ```js
-    global memory with > 
+    global memory with >
     - [function userCreator()]
 
     - user1 : {
@@ -444,7 +444,7 @@ In Global memory:
 ```
 
 - Each object have brand new increment function defined on them...
-We should be able attach multiple function on them not single function ex: login, logout, render etc...
+  We should be able attach multiple function on them not single function ex: login, logout, render etc...
 
 Is there a better way? to getting single copyies of them in `Global Memory`
 
@@ -461,7 +461,7 @@ How to make this link ?
 In Global memory:
 
 ```js
-    global memory with > 
+    global memory with >
 
     userCreator : -[f]-
 
@@ -483,31 +483,34 @@ In Global memory:
 
     // => this bond is called prototypal bond : chain link to or go look functionStore
     /**
-     * when user doesn't find increment it goes look in function store for increment() 
+     * when user doesn't find increment it goes look in function store for increment()
      */
 
 ```
 
-
 The Code Base
 
 ```js
-function userCreator (name, score){
-    const newUser = Object.create(functionStore);
+function userCreator(name, score) {
+  const newUser = Object.create(functionStore);
 
-    newUser.name = name;
-    newUser.score = score;
+  newUser.name = name;
+  newUser.score = score;
 
-    return newUser;
-};
+  return newUser;
+}
 
 const functionStore = {
-    increment: function(){ this.score++; },
-    Login: function(){ console.log("Your are loggedin"); }
+  increment: function () {
+    this.score++;
+  },
+  Login: function () {
+    console.log("Your are loggedin");
+  },
 };
 
-const user1 = userCreator('ullas', 10)
-const user2 = userCreator('kingsman', 10)
+const user1 = userCreator("ullas", 10);
+const user2 = userCreator("kingsman", 10);
 
 user1.increment();
 ```
@@ -516,26 +519,27 @@ In the global memory
 
 **Initially:**
 
-  ```js
-    global memory > 
+```js
+  global memory >
 
-    userCreator: -[f]-
+  userCreator: -[f]-
 
-    functionStore: {
-        increment: -[f]-
-        login: -[f]- 
-    }
+  functionStore: {
+      increment: -[f]-
+      login: -[f]-
+  }
 
-    User1 :undefined
-  ```
+  User1 :undefined
+```
 
-user1  = `userCreator('ullas' 10)`
+user1 = `userCreator('ullas' 10)`
 
 which create a new execuation context
 
 - In a local memory
 
   - In thread of execution:
+
   ```js
   newUser: Object.create(functionStore)
   => which return empty obj {}
@@ -543,7 +547,7 @@ which create a new execuation context
 
   ```js
     local Memory >
-    
+
     - name: 'ullas'
     - score: 10
 
@@ -558,17 +562,17 @@ which create a new execuation context
   ```
 
   - **returning** => `newUser` object
-  
+
   - return out to **Gloabl Memory**
 
   ```js
-    global memory > 
+    global memory >
 
     userCreator: -[f]-
 
     functionStore: {
         increment: -[f]-
-        login: -[f]- 
+        login: -[f]-
     }
 
     User1 : {
@@ -586,7 +590,6 @@ Now the `increment()`
 - We need some placeholder inside of that function increment in order to refer to that object
 
 Or we need label thats always going to refer to that object on which we are running the function
-
 
 > **this** Fundamental rule always pointing to the relevent object to the left-hand side of the dot on which we calling the function
 
@@ -614,7 +617,7 @@ Embracing the Magic of the `new` Keyword: No Hard Work, Just Automation! 🤩
 Let's witness this enchantment in action with a spellbinding code example:
 
 ```js
-const user1 = new userCreator('ullas', 10)
+const user1 = new userCreator("ullas", 10);
 ```
 
 When we call the constructor function with `new` keyword in front we automate 2 things
@@ -652,23 +655,23 @@ Here, we have the captivating `multiplyBy2` function. It gracefully showcases it
 
 Curiously, we can access the `stored` property separately, giving us a surprising value of 5. Additionally, the enigmatic `multiplyBy2.prototype` property returns an empty parentheses pair (). Its true purpose will soon be revealed.
 
-- let's return to the enchanting world of the `UserCreator` constructor function. 
+- let's return to the enchanting world of the `UserCreator` constructor function.
 
 Code Base
 
 ```js
-function UserCreator(name, score){
-    this.name = name;
-    this.score = score;
+function UserCreator(name, score) {
+  this.name = name;
+  this.score = score;
 }
-UserCreator.prototype.increment = function(){
-    this.score++;
-}
-UserCreator.prototype.login = function(){
-    console.log("You are loggedin")
-}
+UserCreator.prototype.increment = function () {
+  this.score++;
+};
+UserCreator.prototype.login = function () {
+  console.log("You are loggedin");
+};
 
-const user1 = new UserCreator('ullas', 10);
+const user1 = new UserCreator("ullas", 10);
 user1.increment();
 ```
 
@@ -676,24 +679,24 @@ In the global memory
 
 **Initially:**
 
-  ```js
-    global memory > 
+```js
+  global memory >
 
-    userCreator() -[f]- //userCreator function version
+  userCreator() -[f]- //userCreator function version
 
-    userCreator: {
-        //userCreator object version
-        prototype: {
-            //functionStore
-            increment: -[f]-
-            login: -[f]-
-        }
-    }
+  userCreator: {
+      //userCreator object version
+      prototype: {
+          //functionStore
+          increment: -[f]-
+          login: -[f]-
+      }
+  }
 
-    User1 :undefined
-  ```
+  User1 :undefined
+```
 
-user1  = new `UserCreator('ullas' 10)`
+user1 = new `UserCreator('ullas' 10)`
 
 which create a new execuation context
 
@@ -703,7 +706,7 @@ Within the realm of `Local Memory`, secrets are revealed:
 
   ```js
     local Memory >
-    
+
     - name: 'ullas'
     - score: 10
 
@@ -719,11 +722,11 @@ Within the realm of `Local Memory`, secrets are revealed:
   ```
 
   returning => `this` object to `user1`
-  
+
   - return out to **Gloabl Memory**
 
   ```js
-    global memory > 
+    global memory >
 
     userCreator() -[f]- //userCreator function version
 
@@ -746,7 +749,7 @@ Within the realm of `Local Memory`, secrets are revealed:
 Now the `increment()`
 
 ```js
-user1.increment()
+user1.increment();
 ```
 
 Creates a execuation Context
@@ -756,7 +759,7 @@ In a local memory
 ```js
 // this => to user1
 
-this.score++
+this.score++;
 // Translates to: user1.score++
 ```
 
@@ -773,47 +776,47 @@ Benefits
 ## The class `Syntatic Sugar`
 
 ```js
-class userCreator{
-    constructor(name, score){
-        this.name = name;
-        this.score = score;
-    }
-    increment(){
-        this.score++
-    }
-    login(){
-        console.log('loggin');
-    }
+class userCreator {
+  constructor(name, score) {
+    this.name = name;
+    this.score = score;
+  }
+  increment() {
+    this.score++;
+  }
+  login() {
+    console.log("loggin");
+  }
 }
-const user1 = new UserCreator('ullas', 10)
-user1.increment()
+const user1 = new UserCreator("ullas", 10);
+user1.increment();
 ```
 
 In the global memory
 
 **Initially:**
 
-  ```js
-    global memory > 
+```js
+  global memory >
 
-    //class
-    [
-        userCreator() -[f]- //userCreator function version
+  //class
+  [
+      userCreator() -[f]- //userCreator function version
 
-        userCreator: {
-            //userCreator object version
-            prototype: {
-                // =>functionStore
-                increment: -[f]-
-                login: -[f]-
-            }
-        }
-    ]
+      userCreator: {
+          //userCreator object version
+          prototype: {
+              // =>functionStore
+              increment: -[f]-
+              login: -[f]-
+          }
+      }
+  ]
 
-    User1 :undefined
-  ```
+  User1 :undefined
+```
 
-user1  = new `UserCreator('ullas' 10)`
+user1 = new `UserCreator('ullas' 10)`
 
 which create a new execuation context
 
@@ -821,12 +824,12 @@ which create a new execuation context
 
   ```js
     local Memory >
-    
+
     - name: 'ullas'
     - score: 10
 
     // due to new it create an empty object first and 'this' label for reference bond to functionStore using _proto_
-    // this = object create() returning => { } 
+    // this = object create() returning => { }
 
     this: {
         name: 'ullas'
@@ -836,11 +839,11 @@ which create a new execuation context
   ```
 
   returning => `this` object to `user1`
-  
+
   - return out to **Gloabl Memory**
 
   ```js
-    global memory > 
+    global memory >
 
     userCreator() -[f]- //userCreator function version
 
@@ -861,4 +864,161 @@ which create a new execuation context
     }
   ```
 
-## Composition over inheritance
+## Proxy Object
+
+- Proxy Objects:
+
+  - Proxy objects allow you to intercept and customize fundamental operations of target objects.
+
+- Creating a Proxy Object:
+
+  ```javascript
+  let proxy = new Proxy(target, handler);
+  ```
+
+  - `target`: The object to be proxied.
+  - `handler`: An object that defines trap methods for different operations on the proxy.
+
+- Trap Methods:
+
+  - Trap methods are functions defined in the handler object that intercept and handle specific operations on the proxy.
+
+- Proxy Handler:
+
+  - The handler object contains trap methods to customize object operations.
+  - Common trap methods include `get`, `set`, `apply`, `has`, `deleteProperty`, etc.
+
+- Example: Property Access (get trap):
+
+  ```javascript
+  let target = { name: "luffy" };
+  let handler = {
+    get: function (target, prop, receiver) {
+      console.log(`Accessed property: ${prop}`);
+      return target[prop];
+    },
+  };
+  let proxy = new Proxy(target, handler);
+
+  console.log(proxy.name); // Output: Accessed property: name, luffy
+  ```
+
+- Example: using `receiver` parameter in get trap
+
+  ```javascript
+  let target = { name: "luffy" };
+  let handler = {
+    get: function (target, prop, receiver) {
+      if (receiver === proxy) {
+        console.log(`Accessed property: ${prop}`);
+        console.log("Accessed through proxy object");
+      } else if (receiver instanceof Proxy) {
+        console.log(`Accessed property: ${prop}`);
+        console.log("Accessed through an object inheriting from the proxy");
+      } else {
+        console.log(`Accessed property: ${prop}`);
+        console.log("Accessed through a regular object");
+      }
+      return target[prop];
+    },
+  };
+  let proxy = new Proxy(target, handler);
+
+  console.log(proxy.name); // Accessed property: name, Accessed through proxy object
+
+  let inheritingObject = Object.create(proxy);
+  console.log(inheritingObject.name); // Accessed property: name, Accessed through an object inheriting from the proxy
+
+  let regularObject = { name: "zoro" };
+  console.log(regularObject.name); // Accessed property: name, Accessed through a regular object
+  ```
+
+- Example: Property Assignment (set trap):
+
+  ```javascript
+  let target = { name: "luffy" };
+  let handler = {
+    set: function (target, prop, value, receiver) {
+      console.log(`Set property: ${prop} = ${value}`);
+      target[prop] = value;
+      return true;
+    },
+  };
+  let proxy = new Proxy(target, handler);
+
+  proxy.age = 19; // Output: Set property: age = 19
+  console.log(proxy.age); // Output: 19
+  ```
+
+- Example: Property Deletion (deleteProperty trap):
+
+  ```javascript
+  let target = { name: "luffy", age: 19 };
+  let handler = {
+    deleteProperty: function (target, prop) {
+      console.log(`Deleted property: ${prop}`);
+      delete target[prop];
+      return true;
+    },
+  };
+  let proxy = new Proxy(target, handler);
+
+  delete proxy.age; // Output: Deleted property: age
+  console.log(proxy.age); // Output: undefined
+  ```
+
+- Example: Prohibit Property Deletion (deleteProperty trap):
+
+  ```javascript
+  let target = { name: "luffy", age: 30 };
+
+  let handler = {
+    deleteProperty(target, prop) {
+      throw new Error(`Deleting property '${prop}' is prohibited.`);
+    },
+  };
+
+  let proxy = new Proxy(target, handler);
+
+  console.log(proxy.name); // Output: luffy
+
+  delete proxy.name; // Throws an error
+
+  console.log(proxy.name); // Output: luffy (property still exists)
+  ```
+
+- Example: Validation and Security:
+
+  ```javascript
+  let user = { name: "luffy", isAdmin: false };
+  let handler = {
+    get: function (target, prop) {
+      if (prop === "isAdmin") {
+        throw new Error("Unauthorized access");
+      }
+      return target[prop];
+    },
+  };
+  let proxy = new Proxy(user, handler);
+
+  console.log(proxy.name); // Output: luffy
+  console.log(proxy.isAdmin); // Throws an error: Unauthorized access
+  ```
+
+- Example: Array Manipulation (apply trap):
+
+  ```javascript
+  let list = [1, 2, 3];
+  let handler = {
+    apply: function (target, thisArg, args) {
+      console.log(`Called with arguments: ${args}`);
+      return target.apply(thisArg, args);
+    },
+  };
+  let proxy = new Proxy(Array.prototype.push, handler);
+
+  proxy.call(list, 4, 5); // Output: Called with arguments: 4,5
+  console.log(list); // Output: [1, 2, 3, 4, 5]
+  ```
+
+- [ ] asd 
