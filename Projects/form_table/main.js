@@ -3,6 +3,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const dataTable = document
     .getElementById("dataTable")
     .getElementsByTagName("tbody")[0];
+  const storedData = JSON.parse(localStorage.getItem("formEntries")) || [];
+
+  function saveToLocalStorage(data) {
+    storedData.push(data);
+    localStorage.setItem("formEntries", JSON.stringify(storedData));
+  }
+
+  function renderTable() {
+    dataTable.innerHTML = "";
+    storedData.forEach((entry) => {
+      const newRow = dataTable.insertRow();
+      newRow.insertCell().textContent = entry.firstName;
+      newRow.insertCell().textContent = entry.lastName;
+      newRow.insertCell().textContent = entry.age;
+      newRow.insertCell().textContent = entry.specialty;
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.addEventListener("click", () => {
+        const index = storedData.indexOf(entry);
+        if (index !== -1) {
+          storedData.splice(index, 1);
+          localStorage.setItem("formEntries", JSON.stringify(storedData));
+          renderTable();
+        }
+      });
+      newRow.insertCell().appendChild(deleteButton);
+    });
+  }
+
+  renderTable();
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -22,14 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Save data to local storage
+    saveToLocalStorage({ firstName, lastName, age, specialty });
+
     // Clear the form fields after submission
     form.reset();
 
-    // Append data to the table
-    const newRow = dataTable.insertRow();
-    newRow.insertCell().textContent = firstName;
-    newRow.insertCell().textContent = lastName;
-    newRow.insertCell().textContent = age;
-    newRow.insertCell().textContent = specialty;
+    // Re-render the table with updated data
+    renderTable();
   });
 });
