@@ -1,5 +1,7 @@
 ## Form example from scratch with Local Storage
 
+Form Table [Project Link](https://ullaskunder3.github.io/master-javascript/Projects/form_table)
+
 ### Description
 
 This is an example of a simple web form built using vanilla JavaScript and HTML. The form collects data including first name, last name, age, and specialty. The entered data is stored in the browser's local storage, and it is displayed in a table format. The table allows users to delete individual entries.
